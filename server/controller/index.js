@@ -3,7 +3,7 @@ const moveResult = require('../model');
 const moveFrodo = async (req, res) => {
   try {
     const moves = req.body.playerMoves;
-    res.send(moveResult(moves));
+    res.send(JSON.stringify(moveResult(moves)));
   } catch (error) {
     console.log(error); // eslint-disable-line no-console
   }

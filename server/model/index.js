@@ -15,7 +15,7 @@ let result;
 function moveResult (moves) {
   let frodoColumn = 5;
   let frodoRow = 0;
-
+  result = '';
   for (let i = 0; i < moves.length; i++) {
     let nextMove;
     switch (moves[i]) {
@@ -63,7 +63,9 @@ function moveResult (moves) {
     if (i === moves.length - 1 && !result) {
       result = 'Frodo Remains lost in the darkness of mordor';
     }
-    if (result) return result;
+    if (result) {
+      return result;
+    }
   }
 
   function moveChecker (nextMove) {
