@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./MovementComponent.css";
+
 function MovementComponent(props) {
   const [playerInput, setPlayerInput] = useState([]);
 
@@ -13,13 +15,15 @@ function MovementComponent(props) {
       e.nativeEvent.data === "w"
     ) {
       setPlayerInput([...playerInput, e.nativeEvent.data]);
+    } else if (e.nativeEvent.data === null) {
+      setPlayerInput(playerInput.slice(0, -1));
     } else {
       alert("invalid move");
     }
   };
 
   return (
-    <div>
+    <div className="form_container">
       <form
         onSubmit={(e) => {
           props.handleSubmit(e, playerInput);
@@ -28,6 +32,7 @@ function MovementComponent(props) {
       >
         <input type="text" value={playerInput} onChange={handleChange}></input>
         <button
+          className="form_button"
           onClick={(e) => {
             props.handleSubmit(e, playerInput);
             setPlayerInput([]);
