@@ -27,7 +27,12 @@ function MovementComponent(props) {
         }}
       >
         <input type="text" value={playerInput} onChange={handleChange}></input>
-        <button onClick={(e) => props.handleSubmit(e, playerInput)}>
+        <button
+          onClick={(e) => {
+            props.handleSubmit(e, playerInput);
+            setPlayerInput([]);
+          }}
+        >
           Guide Frodo
         </button>
       </form>
