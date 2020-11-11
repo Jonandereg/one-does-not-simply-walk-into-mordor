@@ -70,7 +70,7 @@ function moveResult (moves) {
 
   function moveChecker (nextMove) {
     if (!nextMove) {
-      result = 'You Have left the borders of mordor without destrying the ring ';
+      result = 'You Have left the borders of mordor without destrying the ring';
     } else if (nextMove === 'O') {
       result = 'an Orc has Capture Frodo, Fall to despair';
     } else if (nextMove === 'D') {
